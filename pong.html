@@ -5,6 +5,7 @@
     ph = 100;
     bx = by = 50;
     bd = 6;
+    score1 = score2 = 0;
 
     window.onload = function() {
         c = document.getElementById('gameboard');
@@ -21,6 +22,9 @@
         cc.fillRect(0, p1y, pt, ph);
         cc.fillRect(c.width-pt, p2y, pt, ph);
         cc.fillRect(bx-bd/2, by-bd/2, bd, bd);
+
+        cc.fillText(score1, 100, 100);
+        cc.fillText(score2, c.width-100, 100);
 
         cc.fillStyle = 'black';
     }
