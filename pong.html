@@ -1,0 +1,14 @@
+<canvas id="gameboard" width="640" height="480"></canvas>
+<script>
+    window.onload = function() {
+        c = document.getElementById('gameboard');
+        cc = c.getContext('2d');
+
+        setInterval(update, 100/30);
+    };
+
+    function update() {
+        cc.fillStlye = 'black';
+        cc.fillRect(0, 0, c.width, c.height);
+    }
+</script>
