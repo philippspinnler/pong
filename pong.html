@@ -20,6 +20,13 @@
         });
     };
 
+    function reset() {
+        bx = c.width/2;
+        by = c.height/2;
+        xv = -xv;
+        yv = 2;
+    }
+
     function update() {
         bx += xv;
         by += yv;
@@ -45,6 +52,7 @@
                 yv = dy*0.3;
             } else {
                 score1++;
+                reset();
             }
         }
 
@@ -55,6 +63,7 @@
                 yv = dy*0.3;
             } else {
                 score2++;
+                reset();
             }
         }
 
