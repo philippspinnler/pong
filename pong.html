@@ -7,12 +7,17 @@
     bd = 6;
     score1 = score2 = 0;
     xv = yv = 2;
+    ais = 2;
 
     window.onload = function() {
         c = document.getElementById('gameboard');
         cc = c.getContext('2d');
 
         setInterval(update, 100/30);
+
+        c.addEventListener('mousemove', function(e) {
+            p1y = e.clientY-ph/2;
+        });
     };
 
     function update() {
@@ -26,6 +31,13 @@
         if (by > c.height && yv > 0) {
             yv = -yv;
         }
+
+        if (p2y + ph/2 < by) {
+            p2y += ais;
+        } else {
+            p2y -= ais;
+        }
+
         cc.fillStlye = 'black';
         cc.fillRect(0, 0, c.width, c.height);
 
