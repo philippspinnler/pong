@@ -6,6 +6,7 @@
     bx = by = 50;
     bd = 6;
     score1 = score2 = 0;
+    xv = yv = 2;
 
     window.onload = function() {
         c = document.getElementById('gameboard');
@@ -15,6 +16,16 @@
     };
 
     function update() {
+        bx += xv;
+        by += yv;
+
+        if (by < 0 && yv < 0) {
+            yv = -yv;
+        }
+
+        if (by > c.height && yv > 0) {
+            yv = -yv;
+        }
         cc.fillStlye = 'black';
         cc.fillRect(0, 0, c.width, c.height);
 
