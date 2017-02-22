@@ -38,6 +38,26 @@
             p2y -= ais;
         }
 
+        if (bx > c.width) {
+            if (by > p2y && by<p2y+ph) {
+                xv=-xv;
+                dy=by-(p2y+ph/2);
+                yv = dy*0.3;
+            } else {
+                score1++;
+            }
+        }
+
+        if (bx < 0) {
+            if (by > p1y && by<p1y+ph) {
+                xv=-xv;
+                dy=by-(p1y+ph/2);
+                yv = dy*0.3;
+            } else {
+                score2++;
+            }
+        }
+
         cc.fillStlye = 'black';
         cc.fillRect(0, 0, c.width, c.height);
 
